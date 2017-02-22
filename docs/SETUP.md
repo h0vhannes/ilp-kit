@@ -404,46 +404,9 @@ funds in this way. You don't want to owe more to other accounts than you can
 pay back, nor do you want people to be able to send massive payments through
 your connector.
 
-## systemd setup
+## Restarting ilp-kit after a server reboot
 
-Create the service file
-```
-sudo vi /etc/systemd/system/ilp-kit.service
-```
-
-with the contents
-```
-[Service]
-ExecStart=/usr/bin/npm start
-Restart=always
-StandardOutput=syslog
-StandardError=syslog
-SyslogIdentifier=ilp-kit
-User=root
-Group=root
-WorkingDirectory=/var/ilp-kit
-
-[Install]
-WantedBy=multi-user.target
-```
-where `WorkingDirectory` is the path to your `ilp-kit` folder.
-
-Restart the daemon
-```
-sudo systemctl daemon-reload
-```
-
-Start the service
-```
-sudo systemctl start ilp-kit
-```
-
-Make it start on reboot
-```
-sudo systemctl enable ilp-kit
-```
-
-You can check the logs with this command
-```
-journalctl -u ilp-kit -f -n 500
-```
+One easy way to make sure your ilp-kit is started again after a reboot, is
+running `pm2 startup`, and then following the instructions of what you have
+to run as root. So type `exit` and run the recommended command as root.
+You can restart your server after this, and check that it worked.
