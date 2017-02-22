@@ -210,6 +210,7 @@ The CLI provides example values, but I'll also put the configuration I'm using.
 
 ```sh
 $ npm start
+$ ./node_modules/.bin/pm2 list # lists the process that are running through pm2
 ```
 
 Your connector's account will be automatically created and given $1000, so you can

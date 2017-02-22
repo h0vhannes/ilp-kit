@@ -44,21 +44,21 @@
   },
   "betterScripts": {
     "start-prod": {
-      "command": "node ./bin/server.js",
+      "command": "pm2 start ./bin/server.js",
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "production"
       }
     },
     "start-prod-api": {
-      "command": "node ./bin/api.js",
+      "command": "pm2 start ./bin/api.js",
       "env": {
         "NODE_PATH": "./api",
         "NODE_ENV": "production"
       }
     },
     "start-prod-ledger": {
-      "command": "node ./bin/ledger.js",
+      "command": "pm2 start ./bin/ledger.js",
       "env": {
         "NODE_ENV": "production"
       }
@@ -184,6 +184,7 @@
     "pg-native": "^1.10.0",
     "phantomjs-prebuilt": "^2.1.7",
     "piping": "^0.3.0",
+    "pm2": "^2.4.0",
     "pretty-error": "^1.2.0",
     "raw-loader": "^0.5.1",
     "react": "^15.4.0",
